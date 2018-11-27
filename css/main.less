@@ -1535,6 +1535,9 @@ header {
   padding-top: 25px;
   padding-bottom: 215px;
   position: relative;
+  @media (max-width:991px){
+    padding-bottom:115px;
+  }
   &:before{
     .b_a();
     width: 870px;
@@ -2760,5 +2763,12 @@ footer{
     width: 100%;
     position: absolute;
     top: 0;
+  }
+}
+
+
+.section_title_block{
+  .title_1{
+    font-family: @Montserrat-bold;
   }
 }
