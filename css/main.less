@@ -255,7 +255,6 @@
 body{
   font: 14px/24px @Montserrat-Regular;
   color: #463E37;
-  overflow-x: hidden;
   &.home{
     @media (min-width:992px){
       height: 100%;
@@ -264,6 +263,12 @@ body{
     }
   }
 }
+
+html, body{
+  overflow-x: hidden;
+}
+
+
 
 h1, .h1, h2,.h2, h3, .h3, h4, .h4,h5,.h5, .title_h1, .bold{
   font-family: @Montserrat-bold;
@@ -557,7 +562,7 @@ body{
               width: 100%;
               height: 4px;
               background: @color_red;
-              bottom: 0;
+              bottom: 1px;
               left: 0;
               right: 0;
               margin: auto;
@@ -768,12 +773,12 @@ header {
     position: fixed;
     width: 80%;
     height: 100%;
-    z-index: 9999;
+    z-index: 99991;
     right: 0;
     top: 0;
     background: #2E2E2E;
     padding-left: 15px;
-    padding-top: 130px;
+    padding-top: 70px;
     padding-bottom: 30px;
     overflow: auto;
     .box-shadow(0px 4px 16px rgba(0, 0, 0, 0.25));
@@ -1141,9 +1146,17 @@ header {
       z-index: 3;
     }
 
+    .section_title_block{
+
+      @media (max-width:991px){
+        height: 180px;
+      }
+    }
+
+
     .product_list {
       @media (max-width:991px){
-        margin-top: 35px;
+        margin-top: -25px;
       }
 
     }
@@ -1156,12 +1169,18 @@ header {
     }
     .title_2{
       color: #fff;
-      //line-height: 28px;
+      @media (max-width:991px){
+        line-height: 28px;
+      }
+
     }
 
 
     .section_title_block{
       @media (max-width:991px){
+        max-width: 247px;
+      }
+      @media (max-width:575px){
         max-width: 247px;
       }
     }
@@ -1248,13 +1267,15 @@ header {
       position: absolute;
       color: #fff;
       font: 16px @Montserrat-bold;
-      height: 100px;
+      height: auto;
+      min-height: 38px;
       width: 100%;
       padding: 0 25px;
-      bottom: 0;
+      bottom: 65px;
       text-align: center;
       @media (max-width:991px){
-        height: 70px;
+        //height: 70px;
+        bottom: 33px;
         font: 14px @Montserrat-bold;
       }
     }
@@ -1635,7 +1656,7 @@ header {
       .m_a();
       opacity: 0;
       .transition(@transition_default);
-      @media (max-width:991px){
+      @media (max-width:575px){
         display: none;
       }
       &:before{
@@ -2226,7 +2247,7 @@ footer{
     padding-top: 60px;
   }
   @media (max-width:991px){
-    padding-top: 45px;
+    padding-top: 25px;
   }
 
 
@@ -2726,4 +2747,18 @@ footer{
     margin-bottom: 20px;
   }
 
+}
+
+
+.page-noscroll{
+  overflow: hidden;
+  position: relative;
+  &:after{
+    content: '';
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
 }

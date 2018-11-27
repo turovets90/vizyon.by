@@ -2,18 +2,18 @@ $(document).ready(function(){
 
     $('.hamburger').click(function () {
         $('header .main_menu').toggleClass('open');
-        $('body').toggleClass('page-noscroll');
+        $('html').toggleClass('page-noscroll');
 
         $('.main_menu .mm_close').click(function () {
             $('header .main_menu').removeClass('open');
-            $('body').removeClass('page-noscroll');
+            $('html').removeClass('page-noscroll');
         });
         return false;
     });
     $(document).on('click', function(e) {
         if (!$(e.target).closest("header .main_menu.open").length) {
             $("header .main_menu.open").removeClass('open');
-            $("body").removeClass('page-noscroll');
+            $("html").removeClass('page-noscroll');
         }
         e.stopPropagation();
     });
